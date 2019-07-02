@@ -16,6 +16,10 @@ class ScoreTestCase(unittest.TestCase):
     def test_score_non_numeric(self):
         self.assertEqual('Invalid test score, try again!',
                          scores.score_input('test', 'cat'))
+    def test_score_input_invalid_message(self):
+        self.assertEqual('This is a valid invalid message!',
+                         scores.score_input('test', 101,
+                         'This is a valid invalid message!'))
 
 if __name__ == '__main__':
     unittest.main()
