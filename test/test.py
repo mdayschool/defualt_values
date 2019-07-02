@@ -13,6 +13,9 @@ class ScoreTestCase(unittest.TestCase):
     def test_score_input_test_score_above_range(self):
         self.assertEqual('Invalid test score, try again!',
                          scores.score_input('test', 101))
+    def test_score_non_numeric(self):
+        self.assertEqual('Invalid test score, try again!',
+                         scores.score_input('test', 'cat'))
 
 if __name__ == '__main__':
     unittest.main()
